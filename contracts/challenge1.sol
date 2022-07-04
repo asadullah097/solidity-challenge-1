@@ -16,7 +16,7 @@ contract Challenge1 is Ownable, Pausable {
     mapping(string => bool) public result;
 
     // //create student function
-    function _createStudent(
+    function createStudent(
         string memory _name,
         uint8 _age,
         string memory _class
@@ -24,7 +24,7 @@ contract Challenge1 is Ownable, Pausable {
         students.push(Student(_name, _age, _class));
     }
 
-    function _result(string memory _name, bool _pass)
+    function setResult(string memory _name, bool _pass)
         public
         onlyOwner
         whenNotPaused
